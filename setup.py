@@ -11,9 +11,9 @@ import urllib.request
 # TODO figure out platform
 libduckdb_url = 'https://github.com/duckdb/duckdb/releases/download/v1.2.2/static-libs-osx-arm64.zip'
 
-# temp_zip_file = tempfile.mktemp()
-temp_zip_file = 'static-libs-osx-arm64.zip'
-# urllib.request.urlretrieve(libduckdb_url, temp_zip_file)
+temp_zip_file = tempfile.mktemp()
+#temp_zip_file = 'static-libs-osx-arm64.zip'
+urllib.request.urlretrieve(libduckdb_url, temp_zip_file)
 zf = zipfile.ZipFile(temp_zip_file, "r")
 temp_dir = tempfile.TemporaryDirectory()
 zf.extractall(temp_dir.name)
